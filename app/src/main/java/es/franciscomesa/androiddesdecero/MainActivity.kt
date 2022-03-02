@@ -9,11 +9,13 @@ import es.franciscomesa.androiddesdecero.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        val binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        binding.message.text = "Hola mundo View Binding"
 
         // Classic way
-        val message = findViewById<TextView>(R.id.message)
-        message.text = "Hola mundo"
+        // val message = findViewById<TextView>(R.id.message)
+        // message.text = "Hola mundo"
 
         Log.d("MainActivity", "onCreate")
     }

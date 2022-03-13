@@ -14,6 +14,15 @@ class MainActivity : AppCompatActivity() {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.button.setOnClickListener {
+            val textToDisplay = binding.inputTextView.text
+            Toast.makeText(
+                applicationContext,
+                textToDisplay,
+                Toast.LENGTH_SHORT
+            ).show()
+
+        }
 
         // Classic way
         // val message = findViewById<TextView>(R.id.message)
@@ -28,10 +37,11 @@ class MainActivity : AppCompatActivity() {
         Log.d("MainActivity", "onDestroy")
     }
 
-    fun pushButton(view: View) {
-        val textToDisplay = findViewById<TextView>(R.id.inputTextView).text
-        val toast = Toast.makeText(applicationContext, textToDisplay, Toast.LENGTH_SHORT)
-        toast.show()
-
-    }
+// Try with Google ;-)
+//    fun pushButton(view: View) {
+//        val textToDisplay = findViewById<TextView>(R.id.inputTextView).text
+//        val toast = Toast.makeText(applicationContext, textToDisplay, Toast.LENGTH_SHORT)
+//        toast.show()
+//
+//    }
 }
